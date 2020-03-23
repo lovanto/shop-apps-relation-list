@@ -1,7 +1,6 @@
 #ifndef listRelasi_H_INCLUDED
 #define listRelasi_H_INCLUDED
 
-#include "list_relasi.h"
 #include "list_barang.h"
 #include "list_toko.h"
 
@@ -10,8 +9,8 @@ using namespace std;
 
 #define next(P) P->next
 #define first(L) L.first
-#define child(P) P->child
-#define parent(P) P->parent
+#define toko(P) P->toko
+#define barang(P) P->barang
 
 typedef struct elmRelasi *adrRelasi;
 

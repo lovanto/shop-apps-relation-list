@@ -8,7 +8,14 @@ adrBarang alokasiBarang(infotype x){
 }
 
 adrBarang findElm(listBarang L, infotype x){
-
+    adrBarang P = first(L);
+    while(P != NULL){
+        if(info(P) == x){
+            return P;
+        }
+        P = next(P);
+    }
+    return NULL;
 }
 
 void printInfo(listBarang L){
