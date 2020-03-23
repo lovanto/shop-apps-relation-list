@@ -19,9 +19,21 @@ struct elmToko{
     adrToko prev;
 };
 
-struct List_child{
+struct listToko{
     adrToko first;
     adrToko last;
 };
+
+adrToko alokasi(infotype x);
+adrToko findElm(listToko L, infotype x);
+void printInfo(listToko L);
+
+void createList(listToko &L);
+void insertFirst(listToko &L, adrToko P);
+void insertLast(listToko &L, adrToko P);
+void insertAfter(adrToko Prec, adrToko P);
+void deleteFirst(listToko &L, adrToko &P);
+void deleteLast(listToko &L, adrToko &P);
+void deleteAfter(adrToko Prec, adrToko &P);
 
 #endif // LIST_TOKO_H_INCLUDED
