@@ -5,8 +5,9 @@
 using namespace std;
 
 #define first(L) L.first
-#define next(P) P->next
+#define last(L) L.last
 #define info(P) P->info
+#define next(P) P->next
 
 typedef string infotype;
 typedef struct elmBarang *adrBarang;
@@ -18,6 +19,7 @@ struct elmBarang {
 
 struct listBarang {
     adrBarang first;
+    adrBarang last;
 };
 
 adrBarang alokasiBarang(infotype x);

@@ -32,6 +32,24 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="list_barang.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="list_barang.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="list_relasi.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="list_relasi.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="list_toko.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="list_toko.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
