@@ -1,6 +1,6 @@
-#include <iostream>
-
-using namespace std;
+#include "list_toko.h"
+#include "list_barang.h"
+#include "list_relasi.h"
 
 int main()
 {

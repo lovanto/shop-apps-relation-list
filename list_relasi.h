@@ -1,9 +1,9 @@
 #ifndef listRelasi_H_INCLUDED
 #define listRelasi_H_INCLUDED
 
-#include "listRelasi.h"
-#include "list_child.h"
-#include "list_parent.h"
+#include "list_relasi.h"
+#include "list_barang.h"
+#include "list_toko.h"
 
 #include <iostream>
 using namespace std;

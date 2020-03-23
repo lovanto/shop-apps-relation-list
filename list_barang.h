@@ -8,7 +8,7 @@ using namespace std;
 #define next(P) P->next
 #define info(P) P->info
 
-typedef int infotype;
+typedef string infotype;
 typedef struct elmBarang *adrBarang;
 
 struct elmBarang {
@@ -20,7 +20,7 @@ struct listBarang {
     adrBarang first;
 };
 
-adrBarang alokasi(infotype x);
+adrBarang alokasiBarang(infotype x);
 adrBarang findElm(listBarang L, infotype x);
 void printInfo(listBarang L);
 
