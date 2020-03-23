@@ -18,10 +18,19 @@ int main()
     insertFirst(LBarang, PBarang);
     printInfo(LBarang);
     PBarang = alokasiBarang("Seniker");
-    insertFirst(LBarang, PBarang);
+    insertLast(LBarang, PBarang);
     printInfo(LBarang);
     PBarang = alokasiBarang("Silper Kuinn");
     insertFirst(LBarang, PBarang);
+    printInfo(LBarang);
+
+    deleteFirst(LBarang, PBarang);
+    printInfo(LBarang);
+
+    deleteLast(LBarang, PBarang);
+    printInfo(LBarang);
+
+    deleteFirst(LBarang, PBarang);
     printInfo(LBarang);
 
     return 0;
