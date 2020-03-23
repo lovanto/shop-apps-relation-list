@@ -4,11 +4,11 @@
 
 listBarang LBarang;
 listToko LToko;
-//listRelasi LRelasi;
+listRelasi LRelasi;
 
 adrBarang PBarang;
 adrToko PToko;
-//adrRelasi PRelasi;
+adrRelasi PRelasi;
 
 void pilihMenu(int menu){
     string inputUser;
@@ -101,6 +101,22 @@ int main()
     PToko = alokasi("Danhil Menn");
     insertFirst(LToko, PToko);
     printInfo(LToko);
+
+    PBarang = findElm(LBarang, "Seniker");
+    PToko = findElm(LToko, "Toto Toko");
+    PRelasi = alokasi(PBarang, PToko);
+    insertFirst(LRelasi,PRelasi);
+    printInfo(LRelasi);
+    PBarang = findElm(LBarang, "Seniker");
+    PToko = findElm(LToko, "Danhil Menn");
+    PRelasi = alokasi(PBarang, PToko);
+    insertLast(LRelasi,PRelasi);
+    printInfo(LRelasi);
+    PBarang = findElm(LBarang, "Pepsoden");
+    PToko = findElm(LToko, "Danhil Menn");
+    PRelasi = alokasi(PBarang, PToko);
+    insertFirst(LRelasi,PRelasi);
+    printInfo(LRelasi);
 
     return 0;
 }
