@@ -69,7 +69,13 @@ void pilihMenu(int menu){
         printInfoByToko(LRelasi, toko);
     break;
     case 8:
-
+        cout << endl;
+        cout << "Masukan nama barang: ";
+        getline(cin, barang);
+        cout << endl;
+        cout << "DATA TOKO DENGAN BARANG " << barang << endl;
+        cout << "======================================" << endl;
+        printInfoByItem(LRelasi, barang);
     break;
     case 9:
         //tampil data toko terlengkap dan tidak lengkap
