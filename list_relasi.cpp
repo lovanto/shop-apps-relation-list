@@ -25,12 +25,24 @@ void printInfo(listRelasi L){
     }else{
         adrRelasi P = first(L);
         while(next(P) != first(L)) {
-            cout<<info(barang(P))<<" -> "<<info(toko(P))<<endl;
+            cout << info(toko(P)) << " menjual -> " << info(barang(P)) << endl;
             P = next(P);
         }
-        cout<<info(barang(P))<<" -> "<<info(toko(P))<<endl;
+        cout << info(toko(P)) << " menjual -> " << info(barang(P)) << endl;
         cout << endl;
     }
+}
+
+void printInfoByToko(listRelasi L){
+
+}
+
+void printInfoByItem(listRelasi L){
+
+}
+
+void printInfoBestAndWorst(listRelasi L){
+
 }
 
 void createList(listRelasi &L){

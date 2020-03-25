@@ -52,10 +52,10 @@ void pilihMenu(int menu){
         //hapus data barang
     break;
     case 6:
-        //tampil seluruh data toko dan barang yg dijual
+        printInfo(LRelasi);
     break;
     case 7:
-        //tampil seluruh data toko dan barang yg dijual
+        //tampil seluruh data barang oleh toko tertentu
     break;
     case 8:
         //tampil seluruh data toko dan barang tertentu

@@ -27,6 +27,9 @@ struct listRelasi{
 adrRelasi alokasi(adrBarang P, adrToko C);
 adrRelasi findElm(listRelasi L, adrBarang P, adrToko C);
 void printInfo(listRelasi L);
+void printInfoByToko(listRelasi L);
+void printInfoByItem(listRelasi L);
+void printInfoBestAndWorst(listRelasi L);
 
 void createList(listRelasi &L);
 void insertFirst(listRelasi &L, adrRelasi P);
