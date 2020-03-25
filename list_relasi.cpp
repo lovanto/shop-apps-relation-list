@@ -33,12 +33,40 @@ void printInfo(listRelasi L){
     }
 }
 
-void printInfoByToko(listRelasi L){
-
+void printInfoByToko(listRelasi L, string toko){
+    if(first(L) == NULL){
+        cout << "List Kosong!" << endl;
+    }else{
+        adrRelasi P = first(L);
+        while(next(P) != first(L)) {
+            if(info(toko(P)) == toko){
+                cout << info(toko(P)) << " menjual -> " << info(barang(P)) << endl;
+            }
+            P = next(P);
+        }
+        if(info(toko(P)) == toko){
+            cout << info(toko(P)) << " menjual -> " << info(barang(P)) << endl;
+        }
+        cout << endl;
+    }
 }
 
-void printInfoByItem(listRelasi L){
-
+void printInfoByItem(listRelasi L, string barang){
+    if(first(L) == NULL){
+        cout << "List Kosong!" << endl;
+    }else{
+        adrRelasi P = first(L);
+        while(next(P) != first(L)) {
+            if(info(barang(P)) == barang){
+                cout << info(toko(P)) << " menjual -> " << info(barang(P)) << endl;
+            }
+            P = next(P);
+        }
+        if(info(barang(P)) == barang){
+            cout << info(toko(P)) << " menjual -> " << info(barang(P)) << endl;
+        }
+        cout << endl;
+    }
 }
 
 void printInfoBestAndWorst(listRelasi L){
