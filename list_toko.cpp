@@ -9,12 +9,17 @@ adrToko alokasi(infotype x){
 }
 
 adrToko findElm(listToko L, infotype x){
-    adrToko P = first(L);
-    while(P != NULL){
-        if(info(P) == x){
-            return P;
+    if(first(L) == NULL){
+        cout << "List Barang Kosong!" << endl;
+        return NULL;
+    }else{
+        adrToko P = first(L);
+        while(P != NULL){
+            if(info(P) == x){
+                return P;
+            }
+            P = next(P);
         }
-        P = next(P);
     }
     return NULL;
 }

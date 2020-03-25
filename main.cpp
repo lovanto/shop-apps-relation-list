@@ -28,7 +28,11 @@ void pilihMenu(int menu){
         cout << "Data Berhasil Ditambahkan!" << endl;
     break;
     case 3:
-
+        PBarang = findElm(LBarang, "Seniker");
+        PToko = findElm(LToko, "Toto Toko");
+        PRelasi = alokasi(PBarang, PToko);
+        insertFirst(LRelasi,PRelasi);
+        printInfo(LRelasi);
     break;
     case 4:
 

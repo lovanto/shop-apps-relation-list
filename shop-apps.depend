@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1584976131 source:d:\cpp\shop-apps\main.cpp
+1585119147 source:d:\cpp\shop-apps\main.cpp
 	"list_toko.cpp"
 	"list_barang.cpp"
 	"list_relasi.cpp"
@@ -15,12 +15,12 @@
 	"list_toko.h"
 	<iostream>
 
-1584974169 d:\cpp\shop-apps\list_toko.cpp
+1585119334 d:\cpp\shop-apps\list_toko.cpp
 	"list_toko.h"
 
-1584973630 d:\cpp\shop-apps\list_barang.cpp
+1585119291 d:\cpp\shop-apps\list_barang.cpp
 	"list_barang.h"
 
-1584976179 d:\cpp\shop-apps\list_relasi.cpp
+1584976263 d:\cpp\shop-apps\list_relasi.cpp
 	"list_relasi.h"
 
