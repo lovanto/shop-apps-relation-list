@@ -1,6 +1,7 @@
 #include "list_toko.cpp"
 #include "list_barang.cpp"
 #include "list_relasi.cpp"
+#include <stdlib.h>
 
 listBarang LBarang;
 listToko LToko;
@@ -11,46 +12,60 @@ adrToko PToko;
 adrRelasi PRelasi;
 
 void pilihMenu(int menu){
-    string inputUser;
+    string toko;
+    string barang;
     switch(menu){
     case 1:
+        cout << "TAMBAH DATA TOKO" << endl;
         cout << "Masukan nama toko: ";
-        cin >> inputUser;
-        PToko = alokasi(inputUser);
+        cin >> toko;
+        PToko = alokasi(toko);
         insertFirst(LToko, PToko);
         cout << "Data Berhasil Ditambahkan!" << endl;
     break;
     case 2:
+        cout << "TAMBAH DATA BARANG" << endl;
         cout << "Masukan nama barang: ";
-        cin >> inputUser;
-        PBarang = alokasiBarang(inputUser);
+        cin >> barang;
+        PBarang = alokasiBarang(barang);
         insertLast(LBarang, PBarang);
         cout << "Data Berhasil Ditambahkan!" << endl;
     break;
     case 3:
-        PBarang = findElm(LBarang, "Seniker");
-        PToko = findElm(LToko, "Toto Toko");
+        cout << "TAMBAH DATA RELASI" << endl;
+        cout << "Masukan nama barang: ";
+        cin >> barang;
+        PBarang = findElm(LBarang, barang);
+        cout << endl;
+        cout << "Masukan nama toko: ";
+        cin >> toko;
+        PToko = findElm(LToko, toko);
+        cout << endl;
         PRelasi = alokasi(PBarang, PToko);
         insertFirst(LRelasi,PRelasi);
-        printInfo(LRelasi);
+        cout << "Data Berhasil Ditambahkan!" << endl;
     break;
     case 4:
-
+        //hapus data toko
     break;
     case 5:
-
+        //hapus data barang
     break;
     case 6:
-
+        //tampil seluruh data toko dan barang yg dijual
     break;
     case 7:
-
+        //tampil seluruh data toko dan barang yg dijual
     break;
     case 8:
-
+        //tampil seluruh data toko dan barang tertentu
     break;
     case 9:
-
+        //tampil data toko terlengkap dan tidak lengkap
+    break;
+    case 10:
+        cout << "End Program...";
+        exit(3);
     break;
     }
 }
@@ -70,11 +85,11 @@ void viewMenu(){
     cout << "6. Tampil Semua Data Toko." << endl;
     cout << "7. Tampil Data Toko Tertentu." << endl;
     cout << "8. Tampil Data Barang Tertentu." << endl;
-    cout << "9. Keluar." << endl;
+    cout << "9. Tampil Toko Terlengkap dan Tidak Lengkap." << endl;
+    cout << "10. Keluar." << endl;
     cout << "Menu? ";
     cin >> menu;
     pilihMenu(menu);
-    cout << endl;
     cout << endl;
 }
 
@@ -82,6 +97,7 @@ int main()
 {
     createList(LBarang);
     createList(LToko);
+    createList(LRelasi);
     viewMenu();
 
     printInfo(LBarang);
