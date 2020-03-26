@@ -46,10 +46,10 @@ void createList(listToko &L){
 }
 
 void insertFirst(listToko &L, adrToko P){
-    if(first(L) == NULL) {
-        last(L) = P;
+    if (first(L) == NULL){
         first(L) = P;
-    } else {
+        last(L) = P;
+    }else{
         next(P) = first(L);
         prev(first(L)) = P;
         first(L) = P;
@@ -57,13 +57,13 @@ void insertFirst(listToko &L, adrToko P){
 }
 
 void insertLast(listToko &L, adrToko P){
-    if(first(L) == NULL) {
-        last(L) = P;
+    if (first(L) == NULL){
         first(L) = P;
-    } else {
+        last(L) = P;
+    }else{
+        prev(P) = last(L);
         next(last(L)) = P;
         last(L) = P;
-        next(P) = NULL;
     }
 }
 
@@ -79,9 +79,10 @@ void deleteFirst(listToko &L, adrToko &P){
         last(L) = NULL;
     }else{
         P = first(L);
-        first(L) = next(P);
-        next(P) = NULL;
+        first(L) = next(first(L));
+        info(P) = "";
         prev(P) = NULL;
+        next(P) = NULL;
     }
 }
 
@@ -96,13 +97,27 @@ void deleteLast(listToko &L, adrToko &P){
         while(next(P)!= last(L)){
             P = next(P);
         }
+        P = last(L);
+        last(L) = prev(P);
         next(last(L)) = NULL;
-        last(L) = P;
-        next(P) = NULL;
+        info(P) = "";
         prev(P) = NULL;
+        next(P) = NULL;
     }
 }
 
 void deleteAfter(adrToko Prec, adrToko &P){
-
+    if(Prec == NULL){
+        cout << "Tidak Ditemukan!" << endl;
+    }else if(next(Prec) == NULL){
+        cout << "Tidak Ada Data Untuk Dihapus!" << endl;
+    }else{
+        P = Prec;
+        Prec = prev(P);
+        next(Prec) = next(P);
+        prev(next(P)) = Prec;
+        info(P) = "";
+        prev(P) = NULL;
+        next(P) = NULL;
+    }
 }

@@ -10,11 +10,15 @@ adrRelasi alokasi(adrBarang P, adrToko C){
 
 adrRelasi findElm(listRelasi L, adrBarang P, adrToko C){
     adrRelasi Q = first(L);
-    while(Q != NULL) {
-        if(barang(Q)==P && toko(Q)== C) {
+
+    while(next(Q) != first(L)){
+        if(barang(Q) == P || toko(Q) == C) {
             return Q;
         }
         Q = next(Q);
+    }
+    if(barang(Q) == P || toko(Q) == C) {
+        return Q;
     }
     return NULL;
 }
@@ -25,10 +29,14 @@ void printInfo(listRelasi L){
     }else{
         adrRelasi P = first(L);
         while(next(P) != first(L)) {
-            cout << info(toko(P)) << " menjual -> " << info(barang(P)) << endl;
+            if(info(toko(P)) != ""){
+                cout << info(toko(P)) << " menjual -> " << info(barang(P)) << endl;
+            }
             P = next(P);
         }
-        cout << info(toko(P)) << " menjual -> " << info(barang(P)) << endl;
+        if(info(toko(P)) != ""){
+                cout << info(toko(P)) << " menjual -> " << info(barang(P)) << endl;
+            }
         cout << endl;
     }
 }
@@ -110,6 +118,40 @@ void insertAfter(adrRelasi Prec, adrRelasi P){
 
 }
 
+void deleteDataToko(listRelasi &LR, listToko &LT, adrToko &PToko, adrRelasi &PRelasi, infotype T){
+    adrToko R = first(LT);
+    while(R != NULL){
+        if(info(R) == T){
+            if(R == first(LT)){
+                deleteFirst(LT, PToko);
+            }else if(R == last(LT)){
+                deleteLast(LT, PToko);
+            }else{
+                adrToko S = findElm(LT, T);
+                deleteAfter(S, PToko);
+            }
+        }
+        R = next(R);
+    }
+}
+
+void deleteDataBarang(listRelasi &LR, listBarang &LB, adrBarang &PBarang, adrRelasi &PRelasi, infotype T){
+    adrBarang R = first(LB);
+    while(R != NULL){
+        if(info(R) == T){
+            if(R == first(LB)){
+                deleteFirst(LB, PBarang);
+            }else if(R == last(LB)){
+                deleteLast(LB, PBarang);
+            }else{
+                adrToko S = findElm(LB, T);
+                deleteAfter(S, PBarang);
+            }
+        }
+        R = next(R);
+    }
+}
+
 void deleteFirst(listRelasi &L, adrRelasi &P){
     if(first(L) == NULL){
         cout << "List Kosong!" << endl;
@@ -123,9 +165,8 @@ void deleteFirst(listRelasi &L, adrRelasi &P){
             Q = next(Q);
         }
         first(L) = next(P);
-        next(Q) = first(L);
         next(P) = NULL;
-
+        next(Q) = first(L);
     }
 }
 
@@ -137,11 +178,13 @@ void deleteLast(listRelasi &L, adrRelasi &P){
         next(P) = NULL;
     }else{
         P = first(L);
+        adrRelasi Q = first(L);
         while(next(P)!= first(L)){
+            Q = P;
             P = next(P);
         }
-        next(next(P)) = NULL;
-        next(P) = first(L);
+        next(P) = NULL;
+        next(Q) = first(L);
     }
 }
 

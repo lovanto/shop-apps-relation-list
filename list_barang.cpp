@@ -78,6 +78,7 @@ void deleteFirst(listBarang &L, adrBarang &P){
     }else{
         P = first(L);
         first(L) = next(P);
+        info(P) = "";
         next(P) = NULL;
     }
 }
@@ -95,6 +96,7 @@ void deleteLast(listBarang &L, adrBarang &P){
         }
         next(last(L)) = NULL;
         next(P) = NULL;
+        info(P) = "";
         last(L) = P;
     }
 }
