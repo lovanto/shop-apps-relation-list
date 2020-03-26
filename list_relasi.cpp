@@ -30,13 +30,17 @@ void printInfo(listRelasi L){
         adrRelasi P = first(L);
         while(next(P) != first(L)) {
             if(info(toko(P)) != ""){
-                cout << info(toko(P)) << " menjual -> " << info(barang(P)) << endl;
+                if(info(barang(P)) != ""){
+                    cout << info(toko(P)) << " menjual -> " << info(barang(P)) << endl;
+                }
             }
             P = next(P);
         }
         if(info(toko(P)) != ""){
+            if(info(barang(P)) != ""){
                 cout << info(toko(P)) << " menjual -> " << info(barang(P)) << endl;
             }
+        }
         cout << endl;
     }
 }
@@ -144,7 +148,7 @@ void deleteDataBarang(listRelasi &LR, listBarang &LB, adrBarang &PBarang, adrRel
             }else if(R == last(LB)){
                 deleteLast(LB, PBarang);
             }else{
-                adrToko S = findElm(LB, T);
+                adrBarang S = findElm(LB, T);
                 deleteAfter(S, PBarang);
             }
         }

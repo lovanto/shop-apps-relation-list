@@ -56,6 +56,9 @@ void pilihMenu(int menu){
         printInfo(LRelasi);
     break;
     case 5:
+        deleteLast(LBarang, PBarang);
+        deleteFirst(LBarang, PBarang);
+        printInfo(LBarang);
         printInfo(LRelasi);
     break;
     case 6:

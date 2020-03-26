@@ -90,17 +90,18 @@ void deleteLast(listBarang &L, adrBarang &P){
         first(L) = NULL;
         last(L) = NULL;
     }else{
-        P = first(L);
-        while(next(P)!= last(L)){
-            P = next(P);
+        P = last(L);
+        adrBarang Q = first(L);
+        while(next(Q) != last(L)){
+            Q = next(Q);
         }
-        next(last(L)) = NULL;
-        next(P) = NULL;
+        next(Q) = NULL;
+        last(L) = Q;
         info(P) = "";
-        last(L) = P;
+        next(P) = NULL;
     }
 }
 
-void deleteAfter(listBarang &L, adrBarang Prec, adrBarang &P){
+void deleteAfter(adrBarang Prec, adrBarang &P){
 
 }

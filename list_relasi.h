@@ -39,6 +39,6 @@ void deleteFirst(listRelasi &L, adrRelasi &P);
 void deleteLast(listRelasi &L, adrRelasi &P);
 void deleteAfter(adrRelasi Prec, adrRelasi &P);
 void deleteDataToko(listRelasi &LR, listToko &LT, adrToko &PToko, adrRelasi &PRelasi, infotype T);
-void deleteDataBarang(listRelasi &LR, listBarang &LB, adrBarang &PBarang, adrRelasi &PRelasi, infotype T){
+void deleteDataBarang(listRelasi &LR, listBarang &LB, adrBarang &PBarang, adrRelasi &PRelasi, infotype T);
 
 #endif // listRelasi_H_INCLUDED
