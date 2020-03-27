@@ -68,7 +68,15 @@ void insertLast(listToko &L, adrToko P){
 }
 
 void insertAfter(adrToko Prec, adrToko P){
-
+    if(Prec = NULL) {
+        cout<<"Tidak ditemukan.";
+        P = NULL;
+    } else {
+        next(P) = next(Prec);
+        prev(P) = Prec;
+        prev(next(Prec)) = P;
+        next(Prec) = P;
+    }
 }
 
 void deleteFirst(listToko &L, adrToko &P){

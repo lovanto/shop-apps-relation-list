@@ -5,7 +5,7 @@
 1585187482 d:\cpp\shop-apps\list_toko.h
 	<iostream>
 
-1584971546 d:\cpp\shop-apps\list_barang.h
+1585287062 d:\cpp\shop-apps\list_barang.h
 	<iostream>
 
 1585232429 d:\cpp\shop-apps\list_relasi.h
@@ -13,16 +13,16 @@
 	"list_toko.h"
 	<iostream>
 
-1585230770 d:\cpp\shop-apps\list_toko.cpp
+1585286058 d:\cpp\shop-apps\list_toko.cpp
 	"list_toko.h"
 
-1585233347 d:\cpp\shop-apps\list_barang.cpp
+1585287160 d:\cpp\shop-apps\list_barang.cpp
 	"list_barang.h"
 
-1585275087 d:\cpp\shop-apps\list_relasi.cpp
+1585287125 d:\cpp\shop-apps\list_relasi.cpp
 	"list_relasi.h"
 
-1585274945 d:\cpp\shop-apps\menu.cpp
+1585287254 d:\cpp\shop-apps\menu.cpp
 	"list_toko.cpp"
 	"list_barang.cpp"
 	"list_relasi.cpp"

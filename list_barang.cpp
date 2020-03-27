@@ -55,7 +55,12 @@ void insertFirst(listBarang &L, adrBarang P){
 }
 
 void insertAfter(listBarang &L, adrBarang Prec, adrBarang P){
-
+    if(Prec = NULL){
+        cout<<"Tidak ditemukan."<< endl;
+    } else {
+        next(P) = next(Prec);
+        next(Prec) = P;
+    }
 }
 
 void insertLast(listBarang &L, adrBarang P){
@@ -102,6 +107,19 @@ void deleteLast(listBarang &L, adrBarang &P){
     }
 }
 
-void deleteAfter(adrBarang Prec, adrBarang &P){
-
+void deleteAfter(listBarang &L, adrBarang Prec, adrBarang &P){
+     if(Prec == NULL){
+        cout << "Tidak Ditemukan!" << endl;
+    }else if(next(Prec) == NULL){
+        cout << "Tidak Ada Data Untuk Dihapus!" << endl;
+    }else{
+        P = Prec;
+        Prec = first(L);
+        while(next(Prec) != P){
+            Prec = next(Prec);
+        }
+        next(Prec) = next(P);
+        next(P) = NULL;
+        info(P) = "";
+    }
 }

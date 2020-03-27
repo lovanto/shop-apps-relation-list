@@ -126,7 +126,13 @@ void insertLast(listRelasi &L, adrRelasi P){
 }
 
 void insertAfter(adrRelasi Prec, adrRelasi P){
-
+    if(Prec = NULL){
+        cout<<"Tidak ditemukan.";
+        P = NULL;
+    } else {
+        next(P) = next(Prec);
+        next(Prec) = P;
+    }
 }
 
 void deleteDataToko(listRelasi &LR, listToko &LT, adrToko &PToko, adrRelasi &PRelasi, infotype T){
@@ -156,7 +162,7 @@ void deleteDataBarang(listRelasi &LR, listBarang &LB, adrBarang &PBarang, adrRel
                 deleteLast(LB, PBarang);
             }else{
                 adrBarang S = findElm(LB, T);
-                deleteAfter(S, PBarang);
+                deleteAfter(LB, S, PBarang);
             }
         }
         R = next(R);

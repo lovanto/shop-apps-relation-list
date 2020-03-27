@@ -8,7 +8,7 @@ listBarang LBarang;
 listToko LToko;
 listRelasi LRelasi;
 
-adrBarang PBarang;
+adrBarang PBarang, CariBarang;
 adrToko PToko;
 adrRelasi PRelasi;
 
@@ -56,8 +56,11 @@ void pilihMenu(int menu){
         printInfo(LRelasi);
     break;
     case 5:
-        deleteLast(LBarang, PBarang);
-        deleteFirst(LBarang, PBarang);
+        cout << endl;
+        cout << "Masukan nama barang: ";
+        getline(cin, barang);
+        CariBarang = findElm(LBarang, barang);
+        deleteDataBarang(LRelasi, LBarang, PBarang, PRelasi, barang);
         printInfo(LBarang);
         printInfo(LRelasi);
     break;
