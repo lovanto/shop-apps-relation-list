@@ -82,7 +82,14 @@ void printInfoByItem(listRelasi L, string barang){
 }
 
 void printInfoBestAndWorst(listRelasi L){
-
+    adrRelasi P = first(L);
+    int countRel = 0;
+    while(next(P) != first(L)){
+        countRel++;
+        P = next(P);
+    }
+    countRel++;
+    cout << countRel << endl;
 }
 
 void createList(listRelasi &L){

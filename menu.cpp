@@ -86,7 +86,8 @@ void pilihMenu(int menu){
         printInfoByItem(LRelasi, barang);
     break;
     case 9:
-        //tampil data toko terlengkap dan tidak lengkap
+        cout << endl;
+        printInfoBestAndWorst(LRelasi);
     break;
     case 10:
         cout << "End Program...";
