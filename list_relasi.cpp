@@ -84,9 +84,9 @@ void printInfoByItem(listRelasi L, string barang){
 void maxJual(listToko LT, listRelasi L){
     adrToko P;
     adrRelasi Q;
-    string tmax;
-    string aToko[100];
-    int aCountToko[100];
+    string tmax[10];
+    string aToko[10];
+    int aCountToko[10];
     int count, max;
     int i=0;
 
@@ -127,10 +127,25 @@ void maxJual(listToko LT, listRelasi L){
             count = aCountToko[j];
             if(count >= max){
                 max = count;
-                tmax = aToko[j];
             }
         }
-        cout << "Toko dengan barang paling lengkap : " << tmax << " sebanyak " << max << " barang." << endl;
+
+        k=-1;
+        for(int j=0; j<i; j++){
+            if(aCountToko[j] == max){
+                k++;
+                tmax[k] = aToko[j];
+            }
+        }
+
+        cout << "Toko dengan barang paling lengkap : ";
+        for(int j=0; j<=k; j++){
+            cout << tmax[j];
+            if(j<k){
+                cout << ", ";
+            }
+        }
+        cout << " sebanyak " << max << " barang." << endl;
     } else {
         cout << "Tidak ada toko." << endl;
     }
@@ -139,9 +154,9 @@ void maxJual(listToko LT, listRelasi L){
 void minJual(listToko LT, listRelasi L){
     adrToko P;
     adrRelasi Q;
-    string tmin;
-    string aToko[100];
-    int aCountToko[100];
+    string tmin[10];
+    string aToko[10];
+    int aCountToko[10];
     int count, min;
     int i=0;
 
@@ -177,15 +192,30 @@ void minJual(listToko LT, listRelasi L){
         }
         cout << endl;
 
-        min = 9999;
+        min = 9;
         for(int j=0; j<i; j++){
             count = aCountToko[j];
             if(count <= min){
                 min = count;
-                tmin = aToko[j];
             }
         }
-        cout << "Toko dengan barang paling sedikit : " << tmin << " sebanyak " << min << " barang." << endl;
+
+        k=-1;
+        for(int j=0; j<i; j++){
+            if(aCountToko[j] == min){
+                k++;
+                tmin[k] = aToko[j];
+            }
+        }
+
+        cout << "Toko dengan barang paling sedikit : ";
+        for(int j=0; j<=k; j++){
+            cout << tmin[j];
+            if(j<k){
+                cout << ", ";
+            }
+        }
+        cout << " sebanyak " << min << " barang." << endl;
     } else {
         cout << "Tidak ada toko." << endl;
     }

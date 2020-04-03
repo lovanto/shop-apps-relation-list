@@ -1,6 +1,7 @@
 #include "list_toko.cpp"
 #include "list_barang.cpp"
 #include "list_relasi.cpp"
+#include "menu.h"
 #include <stdlib.h>
 #include <string>
 
@@ -24,6 +25,7 @@ void pilihMenu(int menu){
         PToko = alokasi(toko);
         insertFirst(LToko, PToko);
         cout << "Data Berhasil Ditambahkan!" << endl;
+        viewMenu();
     break;
     case 2:
         cout << "TAMBAH DATA BARANG" << endl;
@@ -32,29 +34,45 @@ void pilihMenu(int menu){
         PBarang = alokasiBarang(barang);
         insertLast(LBarang, PBarang);
         cout << "Data Berhasil Ditambahkan!" << endl;
+        viewMenu();
     break;
     case 3:
         cout << "TAMBAH DATA RELASI" << endl;
         cout << "Masukan nama barang: ";
         getline(cin, barang);
         PBarang = findElm(LBarang, barang);
+        while(PBarang == NULL){
+            cout << "Data Tidak Ditemukan. Silakan Cari Lagi!" << endl;
+            cout << "Masukan nama barang: ";
+            getline(cin, barang);
+            PBarang = findElm(LBarang, barang);
+        }
         cout << endl;
         cout << "Masukan nama toko: ";
         getline(cin, toko);
         PToko = findElm(LToko, toko);
+        while(PToko == NULL){
+            cout << "Data Tidak Ditemukan. Silakan Cari Lagi!" << endl;
+            cout << "Masukan nama barang: ";
+            getline(cin, barang);
+            PToko = findElm(LToko, toko);
+        }
         cout << endl;
         PRelasi = alokasi(PBarang, PToko);
         insertFirst(LRelasi,PRelasi);
         cout << "Data Berhasil Ditambahkan!" << endl;
-        printInfoBestAndWorst(LToko, LRelasi);
+        viewMenu();
     break;
     case 4:
         cout << endl;
+        printInfo(LToko);
         cout << "Masukan nama toko: ";
         getline(cin, toko);
+        cout << endl;
         deleteDataToko(LRelasi, LToko, PToko, PRelasi, toko);
         printInfo(LToko);
         printInfo(LRelasi);
+        viewMenu();
     break;
     case 5:
         cout << endl;
@@ -64,12 +82,14 @@ void pilihMenu(int menu){
         deleteDataBarang(LRelasi, LBarang, PBarang, PRelasi, barang);
         printInfo(LBarang);
         printInfo(LRelasi);
+        viewMenu();
     break;
     case 6:
         cout << endl;
         cout << "DATA SEMUA TOKO dan BARANG DAGANGANNYA" << endl;
         cout << "======================================" << endl;
         printInfo(LRelasi);
+        viewMenu();
     break;
     case 7:
         cout << endl;
@@ -79,6 +99,7 @@ void pilihMenu(int menu){
         cout << "DATA " << toko << " dan BARANG DAGANGANNYA" << endl;
         cout << "======================================" << endl;
         printInfoByToko(LRelasi, toko);
+        viewMenu();
     break;
     case 8:
         cout << endl;
@@ -88,9 +109,11 @@ void pilihMenu(int menu){
         cout << "DATA TOKO DENGAN BARANG " << barang << endl;
         cout << "======================================" << endl;
         printInfoByItem(LRelasi, barang);
+        viewMenu();
     break;
     case 9:
         printInfoBestAndWorst(LToko, LRelasi);
+        viewMenu();
     break;
     case 10:
         cout << "End Program...";
