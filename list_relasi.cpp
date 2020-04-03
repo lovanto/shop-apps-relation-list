@@ -81,15 +81,81 @@ void printInfoByItem(listRelasi L, string barang){
     }
 }
 
-void printInfoBestAndWorst(listRelasi L){
-    adrRelasi P = first(L);
+void maxJual(listToko LT, listRelasi L){
+    adrToko P;
+    adrRelasi Q;
+    adrToko tmax;
+    int count, max;
+    count = 0;
+    max = 0;
+
+    P = first(LT);
+    if(first(LT) != NULL){
+        while(P != NULL){
+            Q = first(L);
+            while(Q != NULL){
+                if(info(toko(Q)) == info(P)){
+                    count = count + 1;
+                }
+                Q = next(Q);
+            }
+            if(count >= max){
+                max = count;
+                tmax = P;
+            }
+            P = next(P);
+        }
+        cout<<"Toko dengan barang paling lengkap : " <<info(tmax)<<" sebanyak "<<max<<" barang."<< endl;
+    } else {
+        cout<<"Tidak ada toko."<< endl;
+    }
+    }
+
+void minJual(listToko LT, listRelasi L){
+    adrToko P;
+    adrRelasi Q;
+    adrToko tmin;
+    int count, min;
+    count = 0;
+    min = 0;
+
+    P = first(LT);
+    if(first(LT) != NULL){
+        while(P != NULL){
+            Q = first(L);
+            while(Q != NULL){
+                if(info(toko(Q)) == info(P)){
+                    count = count + 1;
+                }
+                Q = next(Q);
+            }
+            if(count <= min){
+                min = count;
+                tmin = P;
+            }
+            P = next(P);
+        }
+        cout<<"Toko dengan barang paling sedikit : " <<info(tmin)<<" sebanyak "<<min<<" barang."<< endl;
+    } else {
+        cout<<"Tidak ada toko."<< endl;
+    }
+}
+
+void printInfoBestAndWorst(listToko LT, listRelasi L){
+    if(first(L) = NULL){
+        cout<<"Tidak ada toko dan barang dalam list.";
+    } else {
+        maxJual(LT,L);
+        minJual(LT,L);
+    }
+    /*adrRelasi P = first(LR);
     int countRel = 0;
-    while(next(P) != first(L)){
+    while(next(P) != first(LR)){
         countRel++;
         P = next(P);
     }
     countRel++;
-    cout << countRel << endl;
+    cout << countRel << endl; */
 }
 
 void createList(listRelasi &L){

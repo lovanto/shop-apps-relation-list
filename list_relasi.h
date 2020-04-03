@@ -29,7 +29,7 @@ adrRelasi findElm(listRelasi L, adrBarang P, adrToko C);
 void printInfo(listRelasi L);
 void printInfoByToko(listRelasi L, string toko);
 void printInfoByItem(listRelasi L, string barang);
-void printInfoBestAndWorst(listRelasi L);
+void printInfoBestAndWorst(listToko LT, listRelasi L);
 
 void createList(listRelasi &L);
 void insertFirst(listRelasi &L, adrRelasi P);
@@ -40,5 +40,9 @@ void deleteLast(listRelasi &L, adrRelasi &P);
 void deleteAfter(adrRelasi Prec, adrRelasi &P);
 void deleteDataToko(listRelasi &LR, listToko &LT, adrToko &PToko, adrRelasi &PRelasi, infotype T);
 void deleteDataBarang(listRelasi &LR, listBarang &LB, adrBarang &PBarang, adrRelasi &PRelasi, infotype T);
+
+void maxJual(listToko LT, listRelasi L);
+void minJual(listToko LT, listRelasi L);
+
 
 #endif // listRelasi_H_INCLUDED

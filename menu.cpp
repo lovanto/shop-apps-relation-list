@@ -90,7 +90,7 @@ void pilihMenu(int menu){
     break;
     case 9:
         cout << endl;
-        printInfoBestAndWorst(LRelasi);
+        printInfoBestAndWorst(LToko, LRelasi);
     break;
     case 10:
         cout << "End Program...";
@@ -102,20 +102,21 @@ void pilihMenu(int menu){
 void viewMenu(){
     int menu;
     cout << endl;
-    cout << "========================================" << endl;
-    cout << "     ===   Data Penjualan    ===    " << endl;
-    cout << "    ===   Ruko Apa Adanya   ===    " << endl;
-    cout << "========================================" << endl;
-    cout << "1. Tambah Data Toko." << endl;
-    cout << "2. Tambah Data Barang." << endl;
-    cout << "3. Tambah Data Relasi." << endl;
-    cout << "4. Hapus Data Toko." << endl;
-    cout << "5. Hapus Data Barang." << endl;
-    cout << "6. Tampil Semua Data Toko." << endl;
-    cout << "7. Tampil Data Toko Tertentu." << endl;
-    cout << "8. Tampil Data Barang Tertentu." << endl;
-    cout << "9. Tampil Toko Terlengkap dan Tidak Lengkap." << endl;
-    cout << "10. Keluar." << endl;
+    cout << "===============================================" << endl;
+    cout << "|         ===   Data Penjualan    ===         |" << endl;
+    cout << "|         ===   Ruko Apa Adanya   ===         |" << endl;
+    cout << "===============================================" << endl;
+    cout << "|1. Tambah Data Toko.                         |" << endl;
+    cout << "|2. Tambah Data Barang.                       |" << endl;
+    cout << "|3. Tambah Data Relasi.                       |" << endl;
+    cout << "|4. Hapus Data Toko.                          |" << endl;
+    cout << "|5. Hapus Data Barang.                        |" << endl;
+    cout << "|6. Tampil Semua Data Toko.                   |" << endl;
+    cout << "|7. Tampil Data Toko Tertentu.                |" << endl;
+    cout << "|8. Tampil Data Barang Tertentu.              |" << endl;
+    cout << "|9. Tampil Toko Terlengkap dan Tidak Lengkap. |" << endl;
+    cout << "|10. Keluar.                                  |" << endl;
+    cout << "===============================================" << endl;
     cout << "Menu? ";
     cin >> menu;
     pilihMenu(menu);
