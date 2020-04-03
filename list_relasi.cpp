@@ -84,78 +84,120 @@ void printInfoByItem(listRelasi L, string barang){
 void maxJual(listToko LT, listRelasi L){
     adrToko P;
     adrRelasi Q;
-    adrToko tmax;
+    string tmax;
+    string aToko[100];
+    int aCountToko[100];
     int count, max;
-    count = 0;
-    max = 0;
+    int i=0;
 
     P = first(LT);
     if(first(LT) != NULL){
-        while(P != NULL){
+        while(P != NULL) {
+            aToko[i] = info(P);
+            P = next(P);
+            i++;
+        }
+
+        int k = 0;
+        Q = first(L);
+        while(next(Q) != first(L)){
+            aCountToko[k] = 0;
+            k++;
+            Q = next(Q);
+        }
+        aCountToko[k] = 0;
+
+        for(int j=0; j<i; j++){
             Q = first(L);
-            while(Q != NULL){
-                if(info(toko(Q)) == info(P)){
-                    count = count + 1;
+            while(next(Q) != first(L)){
+                if(info(toko(Q)) == aToko[j]){
+                    aCountToko[j]++;
                 }
+                k++;
                 Q = next(Q);
             }
+            if(info(toko(Q)) == aToko[j]){
+                aCountToko[j]++;
+            }
+        }
+        cout << endl;
+
+        max = -1;
+        for(int j=0; j<i; j++){
+            count = aCountToko[j];
             if(count >= max){
                 max = count;
-                tmax = P;
+                tmax = aToko[j];
             }
-            P = next(P);
         }
-        cout<<"Toko dengan barang paling lengkap : " <<info(tmax)<<" sebanyak "<<max<<" barang."<< endl;
+        cout << "Toko dengan barang paling lengkap : " << tmax << " sebanyak " << max << " barang." << endl;
     } else {
-        cout<<"Tidak ada toko."<< endl;
+        cout << "Tidak ada toko." << endl;
     }
-    }
+}
 
 void minJual(listToko LT, listRelasi L){
     adrToko P;
     adrRelasi Q;
-    adrToko tmin;
+    string tmin;
+    string aToko[100];
+    int aCountToko[100];
     int count, min;
-    count = 0;
-    min = 0;
+    int i=0;
 
     P = first(LT);
     if(first(LT) != NULL){
-        while(P != NULL){
+        while(P != NULL) {
+            aToko[i] = info(P);
+            P = next(P);
+            i++;
+        }
+
+        int k = 0;
+        Q = first(L);
+        while(next(Q) != first(L)){
+            aCountToko[k] = 0;
+            k++;
+            Q = next(Q);
+        }
+        aCountToko[k] = 0;
+
+        for(int j=0; j<i; j++){
             Q = first(L);
-            while(Q != NULL){
-                if(info(toko(Q)) == info(P)){
-                    count = count + 1;
+            while(next(Q) != first(L)){
+                if(info(toko(Q)) == aToko[j]){
+                    aCountToko[j]++;
                 }
+                k++;
                 Q = next(Q);
             }
+            if(info(toko(Q)) == aToko[j]){
+                aCountToko[j]++;
+            }
+        }
+        cout << endl;
+
+        min = 9999;
+        for(int j=0; j<i; j++){
+            count = aCountToko[j];
             if(count <= min){
                 min = count;
-                tmin = P;
+                tmin = aToko[j];
             }
-            P = next(P);
         }
-        cout<<"Toko dengan barang paling sedikit : " <<info(tmin)<<" sebanyak "<<min<<" barang."<< endl;
+        cout << "Toko dengan barang paling sedikit : " << tmin << " sebanyak " << min << " barang." << endl;
     } else {
-        cout<<"Tidak ada toko."<< endl;
+        cout << "Tidak ada toko." << endl;
     }
 }
 
 void printInfoBestAndWorst(listToko LT, listRelasi L){
-    if(first(L) = NULL){
-        cout<<"Tidak ada toko dan barang dalam list.";
+    if(first(L) == NULL){
+        cout << "Tidak ada toko dan barang dalam list.";
     } else {
         maxJual(LT,L);
         minJual(LT,L);
     }
-    /*adrRelasi P = first(LR);
-    int countRel = 0;
-    while(next(P) != first(LR)){
-        countRel++;
-        P = next(P);
-    }
-    countRel++;
-    cout << countRel << endl; */
 }
 
 void createList(listRelasi &L){

@@ -46,6 +46,7 @@ void pilihMenu(int menu){
         PRelasi = alokasi(PBarang, PToko);
         insertFirst(LRelasi,PRelasi);
         cout << "Data Berhasil Ditambahkan!" << endl;
+        printInfoBestAndWorst(LToko, LRelasi);
     break;
     case 4:
         cout << endl;
@@ -89,7 +90,6 @@ void pilihMenu(int menu){
         printInfoByItem(LRelasi, barang);
     break;
     case 9:
-        cout << endl;
         printInfoBestAndWorst(LToko, LRelasi);
     break;
     case 10:
