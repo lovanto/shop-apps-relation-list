@@ -1,1 +1,0 @@
-nanti lanjutin delete after barang
