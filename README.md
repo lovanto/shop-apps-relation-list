@@ -4,7 +4,7 @@
 ![Menu Program](images/photo1.png)
 
 ## Deskripsi
-Program ini merupakan tugas akhir wajib untuk syarat kelulusan untuk mata kuliah **STD** di prodi **RPL(Rekayasa Perangkat Lunak)** di telkom university. Program ini menggunakan typeData bentukan tentang mahasiswa yang diprogram untuk dapat melakukan:
+Program ini merupakan tugas akhir wajib untuk syarat kelulusan untuk mata kuliah **STD** di prodi **RPL(Rekayasa Perangkat Lunak)** di telkom university. Program ini dapat melakukan:
  1. Penambahan data toko.
  2. Penambahan data barang.
  3. Penentuan relasi toko dan barang yang dijual (dan sebalikknya).
@@ -21,7 +21,7 @@ Program ini menggunakan model dibawah:
 ## How To Run
  1. Buka cmd di direktori program.
  2. Ketik `go build` di cmd.
- 3. Ketik nama dari folder example: `tubesDAP` di cmd.
+ 3. Ketik nama dari folder example: `shop-apps-relation-list` di cmd.
 
 ## Notes
 Gunakan program ini sebagai referensi bukan untuk plagiarisme.
